@@ -22,6 +22,10 @@ class Account extends Component {
       e.preventDefault();
       const amount = parseInt(this.inputBox.value, 10);
       const newBalance = this.state.balance - amount;
+      if (newBalance < 0){
+        alert('insufficient funds')
+        return;
+      }
       this.setState({
         balance: newBalance
       })
